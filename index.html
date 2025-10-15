@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día Mamá Victoria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffdee9 0%, #b5fffc 50%, #ffeaa7 100%);
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 450px;
+            height: 600px;
+            background: linear-gradient(145deg, #fff5f7, #ffffff);
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(255, 105, 180, 0.3);
+            position: relative;
+            padding: 40px;
+            animation: floatCard 3s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hearts-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: floatHearts 6s ease-in-out infinite;
+            opacity: 0.4;
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; color: #ff6b9d; }
+        .heart:nth-child(2) { left: 30%; animation-delay: 1s; color: #ff8fa3; }
+        .heart:nth-child(3) { left: 50%; animation-delay: 2s; color: #ffa8c5; }
+        .heart:nth-child(4) { left: 70%; animation-delay: 3s; color: #ffb3d9; }
+        .heart:nth-child(5) { left: 85%; animation-delay: 1.5s; color: #ffc9e4; }
+
+        @keyframes floatHearts {
+            0% { transform: translateY(600px) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 28px;
+            color: #ff6b9d;
+            margin-bottom: 10px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .name {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b9d, #c44569, #ff6b9d);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .flower {
+            font-size: 80px;
+            margin: 30px 0;
+            animation: bloom 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(255, 107, 157, 0.4));
+        }
+
+        @keyframes bloom {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .message {
+            font-size: 20px;
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .message strong {
+            color: #ff6b9d;
+            font-size: 22px;
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ffeb3b;
+            border-radius: 50%;
+            animation: twinkle 1.5s ease-in-out infinite;
+            box-shadow: 0 0 10px #ffeb3b;
+        }
+
+        .sparkle:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 20%; right: 20%; animation-delay: 0.3s; }
+        .sparkle:nth-child(3) { top: 60%; left: 10%; animation-delay: 0.6s; }
+        .sparkle:nth-child(4) { bottom: 15%; right: 15%; animation-delay: 0.9s; }
+        .sparkle:nth-child(5) { top: 40%; right: 10%; animation-delay: 1.2s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .footer {
+            font-size: 16px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="hearts-bg">
+            <div class="heart">❤️</div>
+            <div class="heart">💕</div>
+            <div class="heart">💖</div>
+            <div class="heart">💗</div>
+            <div class="heart">💝</div>
+        </div>
+        
+        <div class="sparkles">
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+        </div>
+
+        <div class="content">
+            <div class="header">
+                <div class="title">✨ Feliz Día de la Madre ✨</div>
+            </div>
+
+            <div class="name">Victoria</div>
+
+            <div class="flower">🌸🌺🌸</div>
+
+            <div class="message">
+                <strong>Gracias por ser</strong> la luz que ilumina mi camino, 
+                por tu <strong>amor incondicional</strong> y tu abrazo que todo lo cura.
+                Eres el corazón de nuestra familia y la razón de nuestra alegría.
+                <br><br>
+                <strong>¡Te amamos infinitamente!</strong> 💕
+            </div>
+
+            <div class="footer">
+                Con todo mi amor 💝
+            </div>
+        </div>
+    </div>
+</body>
+</html>
